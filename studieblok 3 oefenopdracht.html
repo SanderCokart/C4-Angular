@@ -46,13 +46,32 @@
   <br>
 
   <!-- OPDRACHT 4 -->
-  <fieldset ng-init="auto={kenteken: '80273', kleur: 'red', merk: 'audi', aantalDeuren: 4}">
+  <fieldset ng-init="auto={kenteken: '80273', kleur: 'rood', merk: 'audi', aantalDeuren: 4}">
     <legend>OPDRACHT 4</legend>
 
     <p>kenteken: {{auto.kenteken}}</p>
     <p>kleur: {{auto.kleur}}</p>
     <p>merk: {{auto.merk}}</p>
     <p>aantal deuren: {{auto.aantalDeuren}}</p>
+  </fieldset>
+
+  <!-- OPDRACHT 5 -->
+  <fieldset ng-init="autos=[
+  {kenteken: '80273', kleur: 'grijs', merk: 'audi', aantalDeuren: 4},
+  {kenteken: '12312', kleur: 'paars', merk: 'porsche', aantalDeuren: 2},
+  {kenteken: '12412', kleur: 'geel', merk: 'bmw', aantalDeuren: 4},
+  {kenteken: '87908', kleur: 'oranje', merk: 'volvo', aantalDeuren: 4},
+  {kenteken: '35345', kleur: 'blauw', merk: 'ford', aantalDeuren: 2}
+  ]">
+    <legend>OPDRACHT 5</legend>
+    <ul>
+      <li ng-repeat="auto in autos">
+        <p>kenteken: {{auto.kenteken}}</p>
+        <p>kleur: {{auto.kleur}}</p>
+        <p>merk: {{auto.merk}}</p>
+        <p>aantal deuren: {{auto.aantalDeuren}}</p>
+      </li>
+    </ul>
   </fieldset>
 
 
