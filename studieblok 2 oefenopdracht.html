@@ -1,0 +1,40 @@
+<!-- OPDRACHT 1 -->
+<!-- Ng-app Ng-model Ng-bind -->
+
+<!-- Ng-app maakt een view en verteld Angular waar het moet beginnen met code compileren. -->
+<!-- Ng-model houdt data vast en kan worden aangepast door events. -->
+<!-- Ng-bind ook wel expressie renderer is een alternatief voor {{ }} en plaats het resultaat van of een variabel of berekening in het element waarop het geroepen wordt. -->
+
+
+<!-- OPDRACHT 2 -->
+<h1>opdracht 2</h1>
+
+<!DOCTYPE html>
+<html ng-app>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+<body>
+  <div>
+    <p>Name: <input type="text" ng-model="name1"></p>
+    <p ng-bind="name1"></p>
+  </body>
+</div>
+</html>
+
+<!-- OPDRACHT 3 -->
+<h1>opdracht3</h1>
+<!DOCTYPE html>
+<html ng-app>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+<body>
+  <div >
+    <p>Name: <input type="text" ng-model="name2"></p>
+    <p ng-bind="name2"></p>
+
+    <label>
+      Name 3:
+      <input type="text" ng-model="name3">
+    </label>
+    <p>{{name3}}</p>
+  </body>
+</div>
+</html>

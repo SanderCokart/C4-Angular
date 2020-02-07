@@ -1,0 +1,61 @@
+<!-- OPDRACHT 1 -->
+<!-- je kunt een expressie neerzetten als {{ }} of als ng-bind="expressie" -->
+
+<!DOCTYPE html>
+<html ng-app lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+  <title>Document</title>
+</head>
+
+<body>
+  <!-- OPDRACHT 2 -->
+  <fieldset ng-init="number1=0; number2=0;">
+    <legend>OPDRACHT 2</legend>
+
+    <input type="number" ng-model="number1">
+    <input type="number" ng-model="number2">
+
+    <p>Addition: {{number1}} + {{number2}} = {{number1 + number2}}</p>
+    <p>Subtraction: {{number1}} - {{number2}} = {{number1 - number2}}</p>
+    <p>Multiplication: {{number1}} &times {{number2}} = {{(number1 * number2)}}</p>
+    <p>Devision: {{number1}} : {{number2}} = {{number1 / number2}}</p>
+
+  </fieldset>
+
+  <br>
+
+  <!-- OPDRACHT 3 -->
+  <fieldset ng-init="height=50; width=50">
+    <legend>OPDRACHT 3</legend>
+    <label>
+      Hoogte:
+      <input type="number" ng-model="height">
+    </label>
+    <label>
+      Breedte:
+      <input type="number" ng-model="width">
+    </label>
+
+    <div style="background-color: red; height: {{height + 'px'}}; width: {{width + 'px'}};"></div>
+
+  </fieldset>
+
+  <br>
+
+  <!-- OPDRACHT 4 -->
+  <fieldset ng-init="auto={kenteken: '80273', kleur: 'red', merk: 'audi', aantalDeuren: 4}">
+    <legend>OPDRACHT 4</legend>
+
+    <p>kenteken: {{auto.kenteken}}</p>
+    <p>kleur: {{auto.kleur}}</p>
+    <p>merk: {{auto.merk}}</p>
+    <p>aantal deuren: {{auto.aantalDeuren}}</p>
+  </fieldset>
+
+
+</body>
+
+</html>
