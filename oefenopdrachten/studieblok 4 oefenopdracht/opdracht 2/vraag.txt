@@ -1,0 +1,4 @@
+Leg uit waarom de aanroep van de angular library aan het begin van de code moet staan.
+
+ + Omdat scriopt die angular.module aanroepen bschikking moeten hebben tot angularJS. Als het niet van te voren geladen
+  is kunnen de scripts er niet bij. Oo zorgt dit ervoor dat anglaurJS geladen is voor de pagina laad.

@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.
+min.js"></script>
+
+<body ng-app="myApp">
+<hr></hr>
+<script>
+    var app = angular.module('myApp', []);
+    app.directive('hr', function () {
+        return {
+            template: '<h1>Made by a directive!</h1>',
+        };
+    });
+</script>
+</body>
+
+</html>
+
+<h1>vraag</h1>
+<p>
+    Je ziet dat ik een bestaand element gebruikt heb, namelijk &lthr&gt.
+    Daarna gebruik ik de directive om hier gegevens aan toe te voegen.
+    Bedenk eens waarom dit gegeven handig zou kunnen zijn.
+    Leg ook uit waarom het niet aan te bevelen is om bestaande elementen op deze manier te gebruiken.
+</p>
+
+<h1>antwoord</h1>
+<p>
+    het kan handig zijn als je het element in kwestie niet gaat gebruiken in die specifieke pagina.
+    Het alternatief is het maken van een unieke directive die nog niet bestaat en dit toe te voegen als module aan je app.
+    Het is niet handig omdat als je samen werkt dit makelijk vergeten kan worden en er kan verwarring ontstaan door bestaade elementen te gebruiken.
+    Liever dat er afspraken zijn over niet bestaande elementen.
+</p>

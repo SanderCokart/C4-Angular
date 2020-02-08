@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <meta http-equiv="X-UA-Compatible" content="ie=edge"/>
+    <script src="../../../AngularJS/angular.js"></script>
+    <script src="namen.js"></script>
+    <title>studieblok 4 oefenopdracht app 2</title>
+</head>
+<body>
+<!--	OPDRACHT 1-->
+<div ng-app="myApp">
+    <div ng-controller="myCtrl1">
+        <!-- method 1 -->
+        {{firstName}} {{lastName}} <br/>
+        <!-- method 2 -->
+        {{firstName + '' + lastName}}
+    </div>
+    
+    <div ng-controller="myCtrl2">
+        <!-- method 1 -->
+        {{firstName}} {{lastName}} <br/>
+        <!-- method 2 -->
+        {{firstName + '' + lastName}}
+    </div>
+</div>
+</body>
+</html>
