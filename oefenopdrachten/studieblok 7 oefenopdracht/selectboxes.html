@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"
+          name="viewport">
+    <meta content="ie=edge" http-equiv="X-UA-Compatible">
+    <script src="../../AngularJS/angular.js"></script>
+    <script src="./app.js"></script>
+    <script src="./controller.js"></script>
+    <title>SelectBoxes</title>
+</head>
+<body ng-app="selectApp" ng-controller="selectController">
+
+
+<!--FRUIT-->
+<label>
+    Selecteer een kleur
+    <select ng-model="geselecteerdeKleur">
+        <option value=""></option>
+        <option value="Geel">Geel</option>
+        <option value="Rood">Rood</option>
+        <option value="Groen">Groen</option>
+        <option value="Bruin">Bruin</option>
+    </select>
+</label>
+
+
+<ul>
+    <h1 ng-show="geselecteerdeKleur">{{geselecteerdeKleur}}</h1>
+    <ul>
+        <li ng-repeat="item in fruit" ng-show="geselecteerdeKleur === item.kleur" tabindex="2">{{item.naam}}</li>
+    </ul>
+</ul>
+
+<!--AUTOS-->
+<label>
+    Auto's
+    <select ng-model="geselecteerdeKenteken">
+        <option value="">filter op kenteken</option>
+        <option ng-repeat="auto in autos">{{auto.kenteken}}</option>
+    </select>
+    of
+    <input ng-model="autoFilter" placeholder="zoeken" type="text">
+</label>
+
+<table border="1">
+    <tr>
+        <th ng-repeat="column in columns">{{column}}</th>
+    </tr>
+    <tr ng-repeat="auto in autos | filter : autoFilter" ng-show="auto.kenteken === geselecteerdeKenteken || autoFilter">
+        <td ng-repeat="column in columns">{{auto[column]}}</td>
+    </tr>
+</table>
+
+</body>
+</html>
+
