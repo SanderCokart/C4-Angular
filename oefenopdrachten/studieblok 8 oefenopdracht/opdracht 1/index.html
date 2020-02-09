@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"
+          name="viewport">
+    <meta content="ie=edge" http-equiv="X-UA-Compatible">
+    <script src="../../../AngularJS/angular.js"></script>
+    <script src="./app.js"></script>
+    <script src="./controller.js"></script>
+    <title>SB-8 OP-1</title>
+</head>
+
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+    
+    .flex {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+    }
+    
+    .flex div {
+        width: 100px;
+        height: 100px;
+    }
+</style>
+
+<body ng-app="kleurApp" ng-controller="kleurController" style="background-color: {{backgroundColor}}">
+
+<div class="flex">
+    <div ng-mouseenter="changeColor($event)" ng-mouseleave="resetColor()" style="background-color: #f00;"></div>
+    <div ng-mouseenter="changeColor($event)" ng-mouseleave="resetColor()" style="background-color: #0f0;"></div>
+    <div ng-mouseenter="changeColor($event)" ng-mouseleave="resetColor()" style="background-color: #00f;"></div>
+</div>
+
+</body>
+</html>

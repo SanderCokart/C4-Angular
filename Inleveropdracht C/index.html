@@ -1,0 +1,34 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"
+          name="viewport">
+    <meta content="ie=edge" http-equiv="X-UA-Compatible">
+    <script src="../AngularJS/angular.js"></script>
+    <script src="app.js"></script>
+    <script src="controller.js"></script>
+    
+    <style>
+        td {
+            padding: 5px;
+        }
+    </style>
+    
+    <title>Inleveropdracht C</title>
+</head>
+<body ng-app="phpApp" ng-controller="phpController">
+
+<table border="true">
+    <thead>
+    <tr>
+        <th ng-repeat="column in columns">{{column}}</th>
+    </tr>
+    <tr ng-repeat="x in bedrijven">
+        <td ng-repeat="column in columns">{{x[column]}}</td>
+    </tr>
+    </thead>
+</table>
+
+</body>
+</html>
