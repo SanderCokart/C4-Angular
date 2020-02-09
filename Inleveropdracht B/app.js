@@ -1,0 +1,1 @@
+let filterApp = angular.module('filterApp', []);

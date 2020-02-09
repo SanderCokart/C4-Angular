@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="https://kit.fontawesome.com/43237492ef.js" crossorigin="anonymous"></script>
+    <script src="../AngularJS/angular.js"></script>
+    <script src="app.js"></script>
+    <script src="controller.js"></script>
+    <style>
+        table {
+            text-align: center;
+            border-collapse: collapse;
+        }
+        
+        th {
+            padding: 10px;
+            border-left: 1px solid;
+            border-right: 1px solid;
+        }
+        
+        td {
+            border: 1px solid;
+            padding: 10px;
+        }
+        
+    </style>
+    <title>Filteren en Sorteren</title>
+</head>
+<body>
+    <table ng-app="filterApp" ng-controller="filterController">
+        <thead>
+            <tr>
+               <th ng-click="sortData(column)" ng-repeat="column in columns">
+                    {{column}}
+                   <span ng-show="reverseSort && column === sortColumn">▼</span>
+                   <span ng-show="!reverseSort && column === sortColumn">▲</span>
+               </th>
+            </tr>
+        </thead>
+        <tbody>
+        <tr ng-repeat="auto in autos | orderBy : sortColumn : reverseSort">
+            <td>{{auto.kenteken}}</td>
+            <td>{{auto.kleur}}</td>
+            <td>{{auto.merk | uppercase}}</td>
+            <td>{{auto.aantalDeuren}}</td>
+            <td>{{auto.prijs | currency : '&euro;'}}</td>
+        </tr>
+        </tbody>
+    </table>
+</body>
+</html>

@@ -1,0 +1,153 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="../AngularJS/angular.js"></script>
+    <script src="controller.js"></script>
+    <script src="./app.js"></script>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: roboto, sans-serif;
+        }
+        
+        [ng\:cloak], [ng-cloak], [data-ng-cloak], [x-ng-cloak] {
+            display: none !important;
+        }
+        
+        input.ng-invalid.ng-touched {
+            color: red;
+            border: red solid 2px;
+        }
+        
+        input.ng-pristine {
+            background-color: #eee;
+        }
+        
+        input, label {
+            display: block;
+            width: 100%;
+            padding: 5px;
+        }
+        
+        input {
+            border-radius: 20px;
+            outline: none;
+            text-align: center;
+        }
+        
+        label {
+            text-align: center;
+        }
+        
+        td {
+            text-align: center;
+        }
+        
+        small {
+            color: red;
+        }
+    </style>
+    <title>Form Validatie</title>
+    <script src="controller.js"></script>
+</head>
+<!--FORM APP-->
+<body ng-app="formApp"
+      ng-controller="formController"
+      style="display: flex; flex-direction: column; width: 100vw; height: 100vh;">
+
+<!--FORM-->
+<form name="contactForm"
+      style="display: flex; flex-direction: column;"
+      novalidate>
+    
+    <!--    VOORNAAM-->
+    <label>
+        Voornaam
+        <input ng-required="true" name="voornaam" type="text" ng-model="persoon.voornaam">
+        <small ng-show="contactForm.voornaam.$touched && contactForm.voornaam.$invalid">Vul alsjeblieft je voornaam
+            in.</small>
+    </label>
+    
+    <!--    ACHTERNAAM-->
+    <label>
+        Achternaam
+        <input ng-required="true" name="achternaam" type="text" ng-model="persoon.achternaam">
+        <small ng-show="contactForm.achternaam.$touched && contactForm.achternaam.$invalid">
+            Vul alsjeblieft je achternaam in.
+        </small>
+    </label>
+    
+    <!--    ADRES-->
+    <label>
+        Adres
+        <input ng-required="true" name="adres" type="text" ng-model="persoon.adres">
+        <small ng-show="contactForm.adres.$touched && contactForm.adres.$invalid">
+            Vul alsjeblieft je adres in. Voorbeeld: Vinkenveld
+        </small>
+    </label>
+    
+    <!--    HUISNUMMER-->
+    <label>
+        Huisnummer
+        <input ng-required="true" name="huisnummer" type="number" ng-model="persoon.huisnummer">
+        <small ng-show="contactForm.huisnummer.$touched && contactForm.huisnummer.$invalid">
+            Vul alsjeblieft je huisnummer in. Voorbeeld: 123
+        </small>
+    </label>
+    
+    <!--    POSTCODE-->
+    <label>
+        Postcode
+        <input ng-required="true" name="postcode" type="text" pattern="[0-9]{4}[a-zA-Z]{2}" ng-model="persoon.postcode">
+        <small ng-show="contactForm.postcode.$touched && contactForm.postcode.$invalid">
+            Vul alsjeblieft je postcode in. Voorbeeld: 7827DP
+        </small>
+    </label>
+    
+    <!--    WOONPLAATS-->
+    <label>
+        Woonplaats
+        <input ng-required="true" name="woonplaats" type="text" ng-model="persoon.woonplaats">
+        <small ng-show="contactForm.woonplaats.$touched && contactForm.woonplaats.$invalid">
+            Vul alsjeblieft je woonplaats in. Voorbeeld: Emmen
+        </small>
+    </label>
+    
+    <!--    EMAILADRES-->
+    <label>
+        Emailadres
+        <input ng-required="true" name="emailadres" pattern=".{1,}@.{1,}\..*$" type="email" ng-model="persoon.emailadres">
+        <small ng-show="contactForm.emailadres.$touched && contactForm.emailadres.$invalid">
+            Vul alsjeblieft je emailadres in. Voorbeeld gebruikersnaam@emailcient.com
+        </small>
+    </label>
+</form>
+
+<!--TABEL-->
+<table border="1" style="flex: 1">
+    <thead>
+    <tr>
+        <th ng-repeat="column in columns">{{column}}</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+        <td>{{persoon.voornaam}}</td>
+        <td>{{persoon.achternaam}}</td>
+        <td>{{persoon.adres}}</td>
+        <td>{{persoon.huisnummer}}</td>
+        <td>{{persoon.postcode}}</td>
+        <td>{{persoon.woonplaats}}</td>
+        <td>{{persoon.emailadres}}</td>
+    </tr>
+    </tbody>
+</table>
+
+</body>
+</html>
