@@ -1,0 +1,33 @@
+<table class="table bg-light mb-5">
+    <thead>
+    <tr style="height: 50px">
+        <th class="sticky-top bg-light" ng-repeat="column in columns">{{column['columnFrontName']}}</th>
+        <th class="sticky-top bg-light">Acties</th>
+    </tr>
+    <tr style="height: 50px">
+        <td colspan="2" class="bg-light" style="top: 45px; position:sticky;">
+            <input id="readFilter" ng-model="filter" type="text" class="form-control" placeholder="Filter">
+        </td>
+    </tr>
+    </thead>
+    <tbody>
+    <tr data-toggle="tooltip"
+        data-placement="top"
+        title="Toegevoegd op: {{person.tijd_toegevoegd}}"
+        ng-repeat="person in personCollection | filter : filter">
+        
+        <td ng-repeat="column in columns">{{person[column['columnBackName']]}}</td>
+        <td>
+            <div class="btn-group">
+                <a class="btn btn-secondary" href="#!update/{{ person.id }}"><i class="fas fa-pen"></i></a>
+                <a class="btn btn-secondary" href="#!delete/{{ person.id }}"><i class="fas fa-trash"></i></a>
+            </div>
+        </td>
+    
+    </tr>
+    </tbody>
+</table>
+
+<a href="#!create"
+   style="cursor: pointer"
+   class="btn btn-secondary fixed-bottom rounded-0 text-light form-control text-uppercase">Add a new person</a>

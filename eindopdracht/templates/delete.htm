@@ -1,0 +1,28 @@
+<div class="container mt-5">
+    <div ng-controller="deleteController" class="card p-3">
+        <h1 class="text-center">Weet je zeker dat je {{person.voornaam}} {{person.achternaam}} wilt verwijderen?</h1>
+        <div class="card-body">
+            <table class="table"
+                   data-toggle="tooltip"
+                   data-placement="top"
+                   title="Toegevoegd op: {{person.tijd_toegevoegd}}">
+                <tbody>
+                <tr ng-repeat="column in columns">
+                    <th scope="col">{{column.columnFrontName}}</th>
+                    <td>{{person[column.columnBackName]}}</td>
+                </tr>
+                </tbody>
+            </table>
+            <div class="btn-group w-100">
+                <button ng-click="goBack()" class="btn btn-primary form-control font-weight-bold">Ga Terug Of
+                    Annuleren
+                </button>
+                
+                <button type="submit" class="btn btn-danger form-control font-weight-bold"
+                        ng-click="deletePerson()">
+                    {{person.voornaam + ' ' + person.achternaam}} Verwijderen
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
