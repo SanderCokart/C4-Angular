@@ -1,3 +1,10 @@
+<style>
+    .my-buttons-flex {
+        display: flex;
+        flex-direction: row-reverse;
+    }
+</style>
+
 <div ng-controller="updateController">
     <div class="container mt-5">
         
@@ -26,22 +33,23 @@
                 
                 </div>
     
-                <div class="btn-group w-100">
-                    <button ng-click="goBack()" class="btn btn-primary form-control font-weight-bold">Ga Terug Of Annuleren</button>
-                    
-                    <button ng-click="reset()" class="btn btn-warning form-control font-weight-bold">Reset</button>
-        
+                <div class="btn-group my-buttons-flex w-100">
                     <button type="submit" class="btn btn-success form-control font-weight-bold"
                             ng-click="updatePerson()" ng-disabled="addForm.$invalid">
-            
+
                         <span ng-hide="updateModels.voornaam.input && updateModels.achternaam.input">Persoon</span>
-            
+
                         <span>
                     {{initialPerson.voornaam + ' ' + initialPerson.achternaam}}
                 </span>
-            
+
                         <span>Weizigen</span>
                     </button>
+
+
+                    <button ng-click="reset()" class="btn btn-warning form-control font-weight-bold">Reset</button>
+
+                    <button type="button" ng-click="goBack()" class="btn btn-primary form-control font-weight-bold">Ga Terug Of Annuleren</button>
                 </div>
                 
             

@@ -6,7 +6,34 @@
     </tr>
     <tr style="height: 50px">
         <td colspan="2" class="bg-light" style="top: 45px; position:sticky;">
-            <input id="readFilter" ng-model="filter" type="text" class="form-control" placeholder="Filter">
+            <div class="input-group">
+                <div class="input-group-prepend">
+                    <div class="input-group-text">
+                        <i class="fas fa-filter"></i>
+                    </div>
+                </div>
+                <input id="readFilter" ng-model="filter" type="text" class="form-control" placeholder="Filter">
+            </div>
+        </td>
+        <td>
+            <div class="input-group mb-3">
+                <div class="input-group-prepend">
+                    <div class="input-group-text">
+                        <i class="fas fa-sort"></i>
+                    </div>
+                </div>
+                <select ng-model="orderBy" class="form-control">
+                    <option value="">Sorteren op...</option>
+                    <option ng-repeat="column in columns" value="{{column.columnBackName}}">
+                        {{column.columnFrontName}}
+                    </option>
+                </select>
+                <div class="input-group-append">
+                    <div class="input-group-text">
+                        <button ng-click="invertSort()" style="padding: 0; font-size: .9rem;" class="btn"><i class="{{!inverseSort ? 'fas fa-sort-amount-up' : 'fas fa-sort-amount-down'}}"></i></button>
+                    </div>
+                </div>
+            </div>
         </td>
     </tr>
     </thead>
@@ -14,7 +41,7 @@
     <tr data-toggle="tooltip"
         data-placement="top"
         title="Toegevoegd op: {{person.tijd_toegevoegd}}"
-        ng-repeat="person in personCollection | filter : filter">
+        ng-repeat="person in personCollection | filter : filter | orderBy : orderBy : inverseSort">
         
         <td ng-repeat="column in columns">{{person[column['columnBackName']]}}</td>
         <td>
