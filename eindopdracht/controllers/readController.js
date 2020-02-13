@@ -28,4 +28,12 @@ endApp.controller('readController', ($scope, $http, $window) => {
     };
 
     $scope.filter = '';
+
+    $scope.orderBy = '';
+
+    $scope.invertSort = () => {
+        $scope.inverseSort = !$scope.inverseSort;
+    };
+
+
 });
