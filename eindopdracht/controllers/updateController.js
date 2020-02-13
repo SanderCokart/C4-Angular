@@ -26,7 +26,7 @@ endApp.controller('updateController', ($scope, $http, $routeParams, $window) => 
         },
         telefoonnummer: {
             invalidMessage: 'Vul alstublieft een geldig telefoonnummer in. (Voorbeeld: 0612345678 of 0591319123).',
-            type: 'number', input: null, label: 'Telefoonnummer', pattern: /^[0-9]{10}$/,
+            type: 'text', input: null, label: 'Telefoonnummer', pattern: /^[0-9]{10}$/,
         },
     };
 
@@ -39,11 +39,7 @@ endApp.controller('updateController', ($scope, $http, $routeParams, $window) => 
     $scope.reset = () => {
         const keys = Object.keys($scope.updateModels);
         keys.forEach(key => {
-            if (key === 'telefoonnummer') {
-                $scope.updateModels[key].input = parseInt($scope.initialPerson[key]);
-            } else {
-                $scope.updateModels[key].input = $scope.initialPerson[key];
-            }
+            $scope.updateModels[key].input = $scope.initialPerson[key];
         });
     };
 
