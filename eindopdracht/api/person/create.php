@@ -6,7 +6,7 @@ header("Content-Type: application/json; charset=UTF-8");
 $data=json_decode(file_get_contents("php://input"));
 
 //CONNECT TO DATABASE AND QUERY INSERT
-$conn = new mysqli("localhost", "root", "", "eindopdracht");
+$conn = new mysqli("localhost", "root", "", "school_a4");
 $conn->query("INSERT INTO person (voornaam, achternaam, straat,
   huisnummer, postcode, woonplaats, telefoonnummer) VALUES
   ('".$data->voornaam."', '".$data->achternaam."', '".$data->straat."', '".$data->huisnummer."',

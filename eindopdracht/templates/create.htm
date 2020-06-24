@@ -1,46 +1,42 @@
 <div class="container mt-5">
-    
+
     <div ng-controller="createController" class="card p-3">
-        
+
         <h1 class="text-center">Nieuw Persoon</h1>
-        
+
         <form name="addForm" class="card-body" novalidate>
-            
+
             <div ng-repeat="model in createModels" class="form-group">
                 <label for="{{'create' + model.label}}">
                     {{model.label}}
                 </label>
-                <input id="{{'create' + model.label}}"
-                       type="text"
-                       ng-model="model.input"
-                       ng-pattern="model.pattern"
-                       class="form-control"
-                       ng-required="true"
-                       name="{{model.label}}"
-                >
-    
-                <div ng-show="addForm[model.label].$invalid && addForm[model.label].$touched" class="alert alert-warning mt-2">{{model.invalidMessage}}</div>
-                
+                <input id="{{'create' + model.label}}" type="text" ng-model="model.input" ng-pattern="model.pattern"
+                    class="form-control" ng-required="true" name="{{model.label}}">
+
+                <div ng-show="addForm[model.label].$invalid && addForm[model.label].$touched"
+                    class="alert alert-warning mt-2">{{model.invalidMessage}}</div>
+
             </div>
-    
+
             <div class="btn-group w-100">
-                <button ng-click="goBack()" class="btn btn-secondary form-control font-weight-bold">Ga Terug Of Annuleren</button>
-    
+                <button ng-click="goBack()" class="btn btn-secondary form-control font-weight-bold">Ga Terug Of
+                    Annuleren</button>
+
                 <button ng-click="reset()" class="btn btn-warning form-control font-weight-bold">Reset</button>
-                
-                <button type="submit" class="btn btn-primary form-control font-weight-bold"
-                        ng-click="createPerson()" ng-disabled="addForm.$invalid">
-            
+
+                <button type="submit" class="btn btn-primary form-control font-weight-bold" ng-click="createPerson()"
+                    ng-disabled="addForm.$invalid">
+
                     <span ng-hide="createModels.voornaam.input && createModels.achternaam.input">Persoon</span>
-            
+
                     <span ng-show="createModels.voornaam.input && createModels.achternaam.input">
-                    {{createModels.voornaam.input + ' ' + createModels.achternaam.input}}
-                </span>
-            
+                        {{createModels.voornaam.input + ' ' + createModels.achternaam.input}}
+                    </span>
+
                     <span>Toevoegen</span>
                 </button>
             </div>
-        
+
         </form>
     </div>
 </div>

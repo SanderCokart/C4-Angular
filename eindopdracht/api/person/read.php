@@ -3,7 +3,7 @@ header("Access-Control-Allow-Origin: *");
 header("Content-Type: application/json; charset=UTF-8");
 
 //CONNECT TO DATABASE AND QUERY ALL
-$conn = new mysqli("localhost", "root", "", "eindopdracht");
+$conn = new mysqli("localhost", "root", "", "school_a4");
 $result = $conn->query("SELECT * FROM person");
 $outp = "";
 
